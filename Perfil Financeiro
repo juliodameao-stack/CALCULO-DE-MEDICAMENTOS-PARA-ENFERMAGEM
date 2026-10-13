@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Touchstone Level 1 - Practice Exercises</title>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f4f7f6;
+            --accent-color: #28a745;
+            --wrong-color: #dc3545;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--secondary-color);
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .exercise-section {
+            margin-bottom: 30px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+        }
+        h3 {
+            color: #444;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+        }
+        .question {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+        select, input[type="text"] {
+            padding: 6px 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin: 0 5px;
+        }
+        .feedback {
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .correct {
+            color: var(--accent-color);
+        }
+        .incorrect {
+            color: var(--wrong-color);
+        }
+        .btn-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background-color: #004085;
+        }
+        #score-display {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 20px;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Touchstone Level 1</h1>
+    <div class="subtitle">Interactive Practice Exercises (Units 1-3 Basics)</div>
+
+    <form id="quiz-form">
+        <!-- Seção 1: O Verbo "To Be" -->
+        <div class="exercise-section">
+            <h3>1. Complete with the correct form of the verb <i>be</i> (am, is, are):</h3>
+            
+            <div class="question" data-answer="are">
+                1. John and Mary ______ students. 
+                <select name="q1">
+                    <option value="">--select--</option>
+                    <option value="am">am</option>
+                    <option value="is">is</option>
+                    <option value="are">are</option>
+                </select>
+                <span class="feedback" id="fb1"></span>
+            </div>
+
+            <div class="question" data-answer="am">
+                2. I ______ from Brazil. 
+                <select name="q2">
+                    <option value="">--select--</option>
+                    <option value="am">am</option>
+                    <option value="is">is</option>
+                    <option value="are">are</option>
+                </select>
+                <span class="feedback" id="fb2"></span>
+            </div>
+
+            <div class="question" data-answer="is">
+                3. ______ your teacher from the US? 
+                <select name="q3">
+                    <option value="">--select--</option>
+                    <option value="Am">Am</option>
+                    <option value="Is">Is</option>
+                    <option value="Are">Are</option>
+                </select>
+                <span class="feedback" id="fb3"></span>
+            </div>
+        </div>
+
+        <!-- Seção 2: Artigos (a / an) -->
+        <div class="exercise-section">
+            <h3>2. Choose <i>a</i> or <i>an</i> for classroom objects:</h3>
+            
+            <div class="question" data-answer="a">
+                4. This is ______ pen. 
+                <select name="q4">
+                    <option value="">--select--</option>
+                    <option value="a">a</option>
+                    <option value="an">an</option>
+                </select>
+                <span class="feedback" id="fb4"></span>
+            </div>
+
+            <div class="question" data-answer="an">
+                5. I have ______ English book. 
+                <select name="q5">
+                    <option value="">--select--</option>
+                    <option value="a">a</option>
+                    <option value="an">an</option>
+                </select>
+                <span class="feedback" id="fb5"></span>
+            </div>
+
+            <div class="question" data-answer="an">
+                6. She has ______ umbrella in her bag. 
+                <select name="q6">
+                    <option value="">--select--</option>
+                    <option value="a">a</option>
+                    <option value="an">an</option>
+                </select>
+                <span class="feedback" id="fb6"></span>
+            </div>
+        </div>
+
+        <!-- Seção 3: This / These -->
+        <div class="exercise-section">
+            <h3>3. Complete with <i>This</i> or <i>These</i>:</h3>
+            
+            <div class="question" data-answer="This">
+                7. ______ is my cell phone. 
+                <select name="q7">
+                    <option value="">--select--</option>
+                    <option value="This">This</option>
+                    <option value="These">These</option>
+                </select>
+                <span class="feedback" id="fb7"></span>
+            </div>
+
+            <div class="question" data-answer="These">
+                8. ______ are my keys. 
+                <select name="q8">
+                    <option value="">--select--</option>
+                    <option value="This">This</option>
+                    <option value="These">These</option>
+                </select>
+                <span class="feedback" id="fb8"></span>
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <button type="button" onclick="checkAnswers()">Check Answers</button>
+        </div>
+    </form>
+
+    <div id="score-display"></div>
+</div>
+
+<script>
+    function checkAnswers() {
+        const questions = document.querySelectorAll('.question');
+        let correctCount = 0;
+
+        questions.forEach((q, index) => {
+            const correctAnswer = q.getAttribute('data-answer');
+            const selectElement = q.querySelector('select');
+            const feedbackElement = document.getElementById(`fb${index + 1}`);
+            
+            const userAnswer = selectElement.value;
+
+            if (userAnswer === "") {
+                feedbackElement.textContent = "⚠️ Select an option";
+                feedbackElement.className = "feedback";
+            } else if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+                feedbackElement.textContent = "✓ Correct!";
+                feedbackElement.className = "feedback correct";
+                correctCount++;
+            } else {
+                feedbackElement.textContent = `✗ Incorrect (Correct: ${correctAnswer})`;
+                feedbackElement.className = "feedback incorrect";
+            }
+        });
+
+        const scoreDisplay = document.getElementById('score-display');
+        scoreDisplay.textContent = `You got ${correctCount} out of ${questions.length} correct!`;
+    }
+</script>
+
+</body>
+</html>
